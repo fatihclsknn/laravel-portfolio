@@ -1,3 +1,6 @@
+@extends('front.layouts.master')
+@section('title','İletisim')
+@section('content')
 <!-- CONTACT -->
 <section class="contact py-5" id="contact">
     <div class="container">
@@ -50,3 +53,4 @@
         </div>
     </div>
 </section>
+@endsection

@@ -16,11 +16,7 @@
 </head>
 <body>
     @include('front.layouts.inc.navbar')
-
-    @include('front.homePage')
-    @include('front.project')
-    @include('front.resume')
-    @include('front.contact')
+    @yield('content')
     @include('front.layouts.inc.footer')
 
     @include('front.layouts.inc.footerScript')

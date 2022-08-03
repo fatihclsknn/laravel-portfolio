@@ -1,3 +1,6 @@
+@extends('front.layouts.master')
+@section('title','Ana Sayfa')
+@section('content')
 <!-- ABOUT -->
 <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
     <div class="container">
@@ -10,28 +13,28 @@
                         <span class="mr-2">Hey folks, I'm</span>
                         <div class="animated-info">
                             <span class="animated-item">Fatih Çalışkan</span>
-                            <span class="animated-item">Web Developer</span>
+                            <span class="animated-item">Back-end devoloper</span>
                             <span class="animated-item">Developer</span>
                         </div>
                     </h1>
-
+                    <br>
                     <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
 
                     <div class="custom-btn-group mt-4">
-                        <a href="#project" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Projeleri Görüntüle</a>
-                        <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">İletişime geç</a>
+                        <a href="{{ route('front.project') }}" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Projeleri Görüntüle</a>
+                        <a href="{{ route('front.contact') }}" class="btn custom-btn custom-btn-bg custom-btn-link">İletişime geç</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-5 col-md-12 col-12">
                 <div class="about-image svg">
-                    <img src="{{ asset('front/images/undraw/undraw_software_engineer_lvl5.svg') }} "class="img-fluid" alt="svg image">
+                    <img src="{{ asset('front/images/undraw/drawing-gc55b833f1_1280.png') }} "class="img-fluid" alt="svg image">
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-
+@endsection
 

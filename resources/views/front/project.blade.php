@@ -1,3 +1,6 @@
+@extends('front.layouts.master')
+@section('title','Projeler')
+@section('content')
 <!-- PROJECTS -->
 <section class="project py-5" id="project">
     <div class="container">
@@ -13,7 +16,9 @@
                     <div class="item">
                         <div class="project-info">
                             <img src="{{asset('front/images/project/project-image01.png')}}" class="img-fluid" alt="project image">
+
                         </div>
+
                     </div>
 
                     <div class="item">
@@ -39,9 +44,13 @@
                             <img src="{{ asset('front/images/project/project-image05.png') }}" class="img-fluid" alt="project image">
                         </div>
                     </div>
-                </div>
 
+                </div>
+                <div class="custom-btn-group mt-4">
+                    <a href="{{ route('front.singleProject','sdsds') }}" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Proje Detayını görüntüle</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
+@endsection

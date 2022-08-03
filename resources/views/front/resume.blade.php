@@ -1,3 +1,6 @@
+@extends('front.layouts.master')
+@section('title','Özgecmiş')
+@section('content')
 <!-- FEATURES -->
 <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
     <div class="container">
@@ -90,3 +93,4 @@
         </div>
     </div>
 </section>
+@endsection

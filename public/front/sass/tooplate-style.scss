@@ -242,7 +242,7 @@ b, strong {
 	    	}
 		}
 	}
-} 
+}
 
 
 // HAMBURGER MENU
@@ -374,7 +374,7 @@ b, strong {
     	width: 3px;
     	height: 100%;
     	position: absolute;
-    	left: 38px; 
+    	left: 38px;
 	}
 }
 
@@ -425,7 +425,7 @@ b, strong {
 				display: block;
 				position: absolute;
 				top: 50%;
-				transform: translate(0, -50%); 
+				transform: translate(0, -50%);
 				font-family: 'unicons';
 				font-size: 100px;
 				line-height: normal;
@@ -434,13 +434,13 @@ b, strong {
 		.owl-prev {
 			&:before {
 				content: '\e833';
-  				left: -45px; 
+  				left: -45px;
 			}
 		}
 		.owl-next {
 			&:before {
 				content: '\e836';
-  				right: -45px; 
+  				right: -45px;
 			}
 		}
 	}
@@ -452,7 +452,7 @@ b, strong {
   		border-radius: 0;
   		margin: 0;
   		padding: 0;
-  		font-size: inherit; 
+  		font-size: inherit;
   		&:hover {
   			color: $main-color;
   		}

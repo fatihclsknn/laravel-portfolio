@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\front\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.layouts.master');
-})->name('front.homPage');
 
+Route::get('/',[HomePageController::class,'index'])->name('front.homepage');
+Route::get('/ozgecmis',[HomePageController::class,'resume'])->name('front.resume');
+Route::get('/projeler',[HomePageController::class,'project'])->name('front.project');
+Route::match(['post','get'],'/iletisim',[HomePageController::class,'contact'])->name('front.contact');
+Route::get('/proje/{slug}',[HomePageController::class,'singleProject'])->name('front.singleProject');
