@@ -1,9 +1,9 @@
 /* -----------------------------------------------
-				CSS Styles 
+				CSS Styles
 --------------------------------------------------
 
     Template Name: NoonPost. - Personal Blog HTML Template
-    
+
 --------------------------------------------------
 
 Table of Content
@@ -19,13 +19,13 @@ Table of Content
     - Categorie
     - Hero
     - About
-    - Contact 
+    - Contact
     - Footer
-	- Preloader 
+	- Preloader
     - Responsive
     - Dark
     - RTL
- 
+
 
 ----------------------------------- */
 /* -----------------------------------
@@ -1180,7 +1180,7 @@ input:checked + .slider:before {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #f67280;
+  background-color: #01339f;
   text-align: center;
   color: #ffffff;
   font-size: 13px;
@@ -1787,7 +1787,7 @@ input:checked + .slider:before {
 		Categorie
 ------------------------------ */
 .categorie {
-  background-color: #f67280;
+  background-color: #04419d;
   color: #ffffff;
   padding: 2px 15px;
   display: inline-block;
@@ -1802,7 +1802,7 @@ input:checked + .slider:before {
 }
 
 .categorie:hover {
-  background-color: #2b2b2b;
+  background-color: #f38c0d;
   color: #ffffff !important;
 }
 
@@ -2172,7 +2172,7 @@ input:checked + .slider:before {
 }
 
 /* -----------------------------
-		 Preloader 
+		 Preloader
 --------------------------------- */
 .loading {
   position: fixed;
@@ -2234,7 +2234,7 @@ input:checked + .slider:before {
 }
 
 /* ------------------------------
-		 Responsive 
+		 Responsive
 ------------------------------ */
 @media screen and (max-width: 991px) {
   .navbar .container {

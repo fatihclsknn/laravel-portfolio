@@ -12,13 +12,14 @@
                     <h1 class="animated animated-text">
                         <span class="mr-2">Hey folks, I'm</span>
                         <div class="animated-info">
-                            <span class="animated-item">Fatih Çalışkan</span>
-                            <span class="animated-item">Back-end devoloper</span>
-                            <span class="animated-item">Developer</span>
+
+                            <span class="animated-item">{{ $user->name }} {{ $user->lastname }}</span>
+                            <span class="animated-item">{{ $user->title }}</span>
                         </div>
+
                     </h1>
                     <br>
-                    <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
+                    <p>{{ $user->description }}</p>
 
                     <div class="custom-btn-group mt-4">
                         <a href="{{ route('front.project') }}" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Projeleri Görüntüle</a>
