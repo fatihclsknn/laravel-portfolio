@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Flasher\Laravel\FlasherServiceProvider::class,
 
     ],
 
@@ -232,5 +233,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+    'Flasher' => Flasher\Laravel\Facade\Flasher::class,
 
 ];
