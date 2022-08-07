@@ -141,30 +141,31 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="">İnstgram </label>
-                                    <input type="text" value="" class="form-control"
-                                           name="instagram">
+                                    <label for="">Title </label>
+                                    <input type="text" value="{{ auth()->user()->title }}" class="form-control"
+                                           name="title">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="">Twitter</label>
-                                    <input type="text" value="" class="form-control"
-                                           name="twitter">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Linkedin</label>
-                                    <input type="text" value=" {{ auth()->user()->linkedin}}" class="form-control"
+                                    <label for="">Linkedin </label>
+                                    <input type="text" value="{{ auth()->user()->linkedin }}" class="form-control"
                                            name="linkedin">
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Github</label>
+                                    <input type="text" value="{{ auth()->user()->github }}" class="form-control"
+                                           name="github">
+                                </div>
+                            </div>
+
                         </div>
                         <div class="form-group">
                             <label for="">Hakkınızda Kısa bilgi <sup>*</sup></label>
                             <textarea id="summernote" class="form-control" rows="4"
-                                      name="about"></textarea>
+                                      name="description">{{ auth()->user()->description }}</textarea>
                         </div>
 
                         <div class="form-group">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\backend\AuthController;
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\front\HomePageController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,8 +42,12 @@ Route::post('/register',[AuthController::class,'registerPost'])->name('backend.r
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::prefix('admin')->middleware('auth')->group(function (){
+Route::prefix('admin')->group(function (){
         Route::get('/dashboard',[DashboardController::class,'index'])->name('admin.index');
-        Route::get('/logout',[AuthController::class,'logout'])->name('admin.logout');
+        Route::post('/dashboard',[DashboardController::class,'editUser'])->name('admin.editUser');
+        Route::resource('/project',ProjectController::class);
+        Route::get('/projectestatus',[ProjectController::class,'status'])->name('admin.project.status');
+
+    Route::get('/logout',[AuthController::class,'logout'])->name('admin.logout');
 
 });

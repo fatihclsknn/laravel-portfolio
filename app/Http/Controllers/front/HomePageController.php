@@ -32,7 +32,7 @@ class HomePageController extends Controller
 
     public function project()
     {
-        $projects = ProjectDetails::all();
+        $projects = ProjectDetails::whereStatus(1)->orderBy('created_at','DESC')->simplePaginate(2);
 
         return view('front.project', compact('projects'));
     }
@@ -50,7 +50,6 @@ class HomePageController extends Controller
             ->where('status', 1)
             ->latest()
             ->first();
-
         $next = ProjectDetails::where('created_at', '>', $project->created_at)
             ->where('status', 1)
             ->latest()

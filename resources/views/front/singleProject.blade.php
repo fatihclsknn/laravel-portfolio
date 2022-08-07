@@ -8,14 +8,14 @@
                     <!--Post-single-->
                     <div class="post-single">
                         <div class="post-single-image">
-                            <img src="{{ asset('front/images/undraw/undraw_software_engineer_lvl5.svg') }}" alt="">
+                            <img src="/storage/project/{{ $project->image }}" alt="">
                         </div>
                         <div class="post-single-content">
                             <a href="blog-grid.html" class="categorie">{{ $project->web_site }}</a>
                             <h4> {{ $project->name }} </h4>
                             <div class="post-single-info">
                                 <ul class="list-inline">
-                                    <li><a href="author.html"><img src="{{ asset('front/images/project/project-image02.png') }}" alt=""></a></li>
+                                    <li><a href="author.html"><img src="/storage/user/{{ $project->getUser->image }}" alt=""></a></li>
                                     <li><a href="author.html">David Smith</a> </li>
                                     <li class="dot"></li>
                                     <li>{{ $project->created_at->format('d-m-y') }}</li>
@@ -26,8 +26,7 @@
 
                         <div class="post-single-body">
                             <p>
-                              {{ $project->content }}
-
+                                {!! $project->content  !!}
 
                             </p>
 
@@ -44,7 +43,7 @@
                                     <div class="small-post">
                                         <div class="image">
                                             <a href="{{ route('front.singleProject',$previous->slug) }}">
-                                                <img src="{{ asset('front/images/undraw/undraw_software_engineer_lvl5.svg') }}" alt="{{ $previous->name }}">
+                                                <img src="/storage/project/{{ $previous->image }}" alt="{{ $previous->name }}">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -66,7 +65,7 @@
                                     <div class="small-post">
                                         <div class="image">
                                             <a href="{{ route('front.singleProject',$next->slug) }}">
-                                                <img src="{{ asset('front/images/project/project-image02.png') }}" alt="{{ $next->name }}">
+                                                <img src="/storage/project/{{ $next->image }}" alt="{{ $next->name }}">
                                             </a>
                                         </div>
                                         <div class="content">

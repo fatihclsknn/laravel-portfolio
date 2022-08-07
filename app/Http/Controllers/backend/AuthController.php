@@ -14,16 +14,6 @@ use Illuminate\Support\Str;
 class AuthController extends Controller
 {
     //
-
-    public function login()
-    {
-        if (Auth::check())
-        {
-            return redirect('admin/dashboard');
-        }
-        return view('backend.auth.login');
-    }
-
     public function loginPost(LoginRequest $request)
     {
 
@@ -34,13 +24,21 @@ class AuthController extends Controller
 
             if (auth()->attempt($credentials)) {
                 $request->session()->regenerate();
-                return redirect()->route('back.index');
+                return redirect()->route('admin.index');
             } else {
                 $errors = ['email' => 'e-mail ya da şifre hatalı'];
                 return back()->withErrors($errors);
             }
 
 
+    }
+    public function login()
+    {
+        if (Auth::check())
+        {
+            return redirect('admin/dashboard');
+        }
+        return view('backend.auth.login');
     }
 
     public function register()

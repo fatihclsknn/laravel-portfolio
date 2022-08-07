@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Blog Yönetici</div>
+        <div class="sidebar-brand-text mx-3">Yönetici Paneli</div>
     </a>
 
     <!-- Divider -->
@@ -33,13 +33,13 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
            aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-eye"></i>
-            <span>Blog Yazıları</span>
+            <span>Projeler</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Yazı İşlemleri:</h6>
-                <a class="collapse-item" href="">Tüm Yazılar</a>
-                <a class="collapse-item" href="">Yeni Yazı Olustur</a>
+                <h6 class="collapse-header">Proje İşlemleri:</h6>
+                <a class="collapse-item" href="{{ route('project.index') }}">Tüm Projeler</a>
+                <a class="collapse-item" href="{{ route('project.create') }}">Yeni Proje Olustur</a>
             </div>
         </div>
     </li>
@@ -48,13 +48,13 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
            aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-inbox"></i>
-            <span>Kategoriler</span>
+            <span>Öz Geçmiş işlemleri</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Kategori</h6>
-                <a class="collapse-item" href="">Tüm Kategoriler</a>
+                <h6 class="collapse-header">Öz Geçmiş</h6>
+                <a class="collapse-item" href="">Öz geçmiş düzenle</a>
 
             </div>
         </div>

@@ -48,7 +48,7 @@
                         <div class="post-card">
                             <div class="post-card-image">
                                 <a href="{{ route('front.singleProject',$project->slug) }}">
-                                    <img src="{{ asset('front/images/project/project-image02.png') }}" alt="">
+                                    <img src="/storage/project/{{ $project->image }}" alt="">
                                 </a>
                             </div>
                             <div class="post-card-content">
@@ -63,11 +63,11 @@
                                     <ul class="list-inline">
                                         <li>
                                             <a href="author.html">
-                                                <img src="{{ asset('https://picsum.photos/200') }}" alt="">
+                                                <img src="/storage/user/{{ $project->getUser->image }} " alt="">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="author.html">David Smith</a>
+                                            <a href="author.html">{{ $project->getUser->name }}</a>
                                         </li>
                                         <li class="dot"></li>
                                         <li>{{ $project->created_at->format('d-m-y') }}</li>
@@ -81,6 +81,7 @@
 
 
 
+
                     <!--pagination-->
                 </div>
             </div>
@@ -90,6 +91,13 @@
                 @include('front.layouts.inc.latestProjectWidget')
 
             </div>
+            <div class="pagination mt-30">
+                <ul class="list-inline">
+
+                    {{ $projects->links() }}
+                </ul>
+            </div>
+
         </div>
     </div>
 </section><!--/-->
