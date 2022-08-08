@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required|min:2|max:20|string',
             'lastname' => 'required|min:2|max:25|string',
-            'description' => 'required|min:2|max:25|string',
+            'description' => 'required|min:2|max:255|string',
             'title'=> 'required|min:2|max:20|string',
             'image' => 'required|mimes:jpg,png,svg,jpeg|max:4096',
             'linkedin'=>'nullable|min:5|max:255|string',

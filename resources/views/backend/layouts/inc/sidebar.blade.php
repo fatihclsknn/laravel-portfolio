@@ -54,7 +54,8 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Öz Geçmiş</h6>
-                <a class="collapse-item" href="">Öz geçmiş düzenle</a>
+                <a class="collapse-item" href="{{ route('resume.index') }}">Tüm Öz geçmiş</a>
+                <a class="collapse-item" href="{{ route('resume.create') }}">Yeni Öz geçmiş ekle</a>
 
             </div>
         </div>
@@ -74,8 +75,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Sayfalar</h6>
-                <a class="collapse-item" href="">Hakkımızda</a>
-                <a class="collapse-item" href="">İletisim</a>
+                <a class="collapse-item" href="{{ route('admin.contact') }}">İletisim</a>
 
             </div>
         </div>

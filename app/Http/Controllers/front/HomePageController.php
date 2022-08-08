@@ -15,7 +15,7 @@ class HomePageController extends Controller
 
     public function __construct()
     {
-        view()->share('latestProject', ProjectDetails::all()->sortByDesc('created_at')->take('3'));
+        view()->share('latestProject', ProjectDetails::all()->where('status','=','1')->sortByDesc('created_at')->take('3'));
     }
 
     public function index()
@@ -45,7 +45,7 @@ class HomePageController extends Controller
 
     public function singleProject($slug)
     {
-        $project = ProjectDetails::whereSlug($slug)->firstOrFail();
+        $project = ProjectDetails::whereSlug($slug)->where('status','=','1')->firstOrFail();
         $previous = ProjectDetails::where('created_at', '<', $project->created_at)
             ->where('status', 1)
             ->latest()

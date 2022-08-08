@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\backend\AuthController;
+use App\Http\Controllers\backend\ContactPageController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\ProjectController;
+use App\Http\Controllers\backend\ResumeController;
 use App\Http\Controllers\front\HomePageController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,12 +44,18 @@ Route::post('/register',[AuthController::class,'registerPost'])->name('backend.r
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::prefix('admin')->group(function (){
+Route::prefix('admin')->middleware('auth')->group(function (){
         Route::get('/dashboard',[DashboardController::class,'index'])->name('admin.index');
         Route::post('/dashboard',[DashboardController::class,'editUser'])->name('admin.editUser');
         Route::resource('/project',ProjectController::class);
         Route::get('/projectestatus',[ProjectController::class,'status'])->name('admin.project.status');
+        Route::resource('/resume',ResumeController::class);
+        Route::get('/resumetestatus',[ResumeController::class,'status'])->name('admin.resume.status');
+        Route::get('/contact',[ContactPageController::class,'index'])->name('admin.contact');
+        Route::post('/contact',[ContactPageController::class,'editUser'])->name('admin.editContact');
 
-    Route::get('/logout',[AuthController::class,'logout'])->name('admin.logout');
+
+
+        Route::get('/logout',[AuthController::class,'logout'])->name('admin.logout');
 
 });
