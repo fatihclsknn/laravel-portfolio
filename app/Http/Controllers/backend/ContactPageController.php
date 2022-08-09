@@ -15,7 +15,7 @@ class ContactPageController extends Controller
         return view('backend.contact.update',compact('contact'));
     }
 
-    public function editUser(Request $request)
+    public function editContact(Request $request)
     {
         $request->validate([
             'page_content' => 'required|min:3|max:255'

@@ -52,7 +52,7 @@ Route::prefix('admin')->middleware('auth')->group(function (){
         Route::resource('/resume',ResumeController::class);
         Route::get('/resumetestatus',[ResumeController::class,'status'])->name('admin.resume.status');
         Route::get('/contact',[ContactPageController::class,'index'])->name('admin.contact');
-        Route::post('/contact',[ContactPageController::class,'editUser'])->name('admin.editContact');
+        Route::post('/contact',[ContactPageController::class,'editContact'])->name('admin.editContact');
 
 
 

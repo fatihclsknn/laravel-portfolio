@@ -14,7 +14,8 @@
                 <div class="contact-form">
                     <h2 class="mb-4">{{ $contact->page_content }}</h2>
 
-                    <form action="" method="get">
+                    <form action="{{ route('front.contact') }}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6 col-12">
                                 <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">

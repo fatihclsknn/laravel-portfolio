@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Contact\AdminInfoMail;
+use App\Mail\Contact\UserInfoMail;
+use App\Models\Contact;
 use App\Models\Contacts;
 use App\Models\ProjectDetails;
 use App\Models\Resume;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class HomePageController extends Controller
 {
@@ -37,9 +42,29 @@ class HomePageController extends Controller
         return view('front.project', compact('projects'));
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
         $contact = Contacts::whereId(1)->firstOrFail();
+        if($request->isMethod('post')){
+            $request->validate([
+                'name' => 'required|min:2|max:255|string',
+                'subject' => 'required|min:2|max:255|string',
+                'email' => 'required|email',
+                'message'=> 'required|min:2|string',
+
+            ]);
+            $contact_message = Contacts::create([
+                'name'=>Str::of($request->name)->trim()->ucfirst(),
+                'subject'=>Str::of($request->subject)->trim(),
+                'email'=>Str::of($request->email)->trim(),
+                'message'=>$request->message,
+            ]);
+
+            Mail::to($request->email)->send( new UserInfoMail($contact_message));
+            Mail::to('blogsepeti.net@gmail.com')->send(new AdminInfoMail($contact_message));
+            return  redirect()->route('front.contact');
+            flash()->addSuccess('Lütfen Mailin kutunuzu kontrol edin');
+        }
         return view('front.contact', compact('contact'));
     }
 
