@@ -62,6 +62,7 @@
     </li>
 
     <!-- Heading -->
+    @role('Admin')
     <div class="sidebar-heading">
        Sayfa Yönetimi
     </div>
@@ -81,16 +82,16 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('kullanici.index') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>Kullanıcılar</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('admin.config.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Ayarlar</span></a>
     </li>
-
+    @endrole()
 
 
 

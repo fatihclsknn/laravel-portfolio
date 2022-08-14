@@ -4,6 +4,7 @@
         <h5>Son Projeler</h5>
     </div>
     <ul class="widget-latest-posts">
+
         @php($i=1)
         @foreach($latestProject as $latest)
             <li class="last-post">
@@ -23,6 +24,8 @@
             </li>
 
         @endforeach
+
     </ul>
 </div>
+
 <!--/-->

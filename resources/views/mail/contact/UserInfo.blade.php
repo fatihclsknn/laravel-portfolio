@@ -175,8 +175,8 @@
                                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 20px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                                 <div class="v-text-align v-line-height" style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px; font-family: Montserrat, sans-serif;">Best Regards</span></p>
-                                                    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px; font-family: Montserrat, sans-serif;">Haris Morgen</span></strong></p>
+                                                    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px; font-family: Montserrat, sans-serif;">Site Yöneticisi</span></p>
+                                                    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px; font-family: Montserrat, sans-serif;">Fatih Çalışkan</span></strong></p>
                                                 </div>
 
                                             </td>

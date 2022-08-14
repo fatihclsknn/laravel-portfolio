@@ -10,16 +10,18 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 class AuthController extends Controller
 {
     //
     public function loginPost(LoginRequest $request)
     {
-
-            $credentials = [
+        $roles = Role::all();
+        $credentials = [
                 'email' => $request->email,
                 'password' => $request->password,
+                'status'=>'1',
             ];
 
             if (auth()->attempt($credentials)) {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use App\Mail\Contact\AdminInfoMail;
 use App\Mail\Contact\UserInfoMail;
+use App\Models\ConfigsModel;
 use App\Models\Contact;
 use App\Models\Contacts;
 use App\Models\ProjectDetails;
@@ -20,6 +21,10 @@ class HomePageController extends Controller
 
     public function __construct()
     {
+        if (ConfigsModel::find(1)->active == 0) {
+            return redirect()->to('site-bakimda')->send();
+        }
+        view()->share('config', ConfigsModel::find(1));
         view()->share('latestProject', ProjectDetails::all()->where('status','=','1')->sortByDesc('created_at')->take('3'));
     }
 
@@ -62,8 +67,8 @@ class HomePageController extends Controller
 
             Mail::to($request->email)->send( new UserInfoMail($contact_message));
             Mail::to('blogsepeti.net@gmail.com')->send(new AdminInfoMail($contact_message));
+            flash()->addSuccess('Lütfen mail kutunuz kontrol edin');
             return  redirect()->route('front.contact');
-            flash()->addSuccess('Lütfen Mailin kutunuzu kontrol edin');
         }
         return view('front.contact', compact('contact'));
     }

@@ -12,7 +12,7 @@
 
             <div class="col-lg-6 col-12">
                 <div class="contact-form">
-                    <h2 class="mb-4">{{ $contact->page_content }}</h2>
+                    <h5 class="mb-4">{{ $contact->page_content }}</h5>
 
                     <form action="{{ route('front.contact') }}" method="POST">
                         @csrf
